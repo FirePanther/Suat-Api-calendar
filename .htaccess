@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^(list|todoist).ics$ $1.php [QSA,L]
