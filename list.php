@@ -7,6 +7,12 @@
  */
 
 header('content-type: text/plain');
+
+require 'conf.php';
+
+// password check for viewing (optional)
+if ($viewPw && $_GET['pw'] !== $viewPw) die('wrong password');
+
 echo 'BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:TCHost.de

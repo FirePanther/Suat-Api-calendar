@@ -8,6 +8,8 @@
 
 header('content-type: text/plain');
 
+require 'conf.php';
+
 if (!count($_POST)) {
 	// display help
 	die('sum: summary (title)
@@ -20,6 +22,9 @@ dfrom, dto: {YYYYMMDD} (period)
 tfrom, tto: {YYYYMMDD}T{HH}[{MM}[{SS}]]
 ');
 }
+
+// password check
+if ($_GET['pw'] !== $pw) die('wrong password');
 
 if (!isset($_POST['sum'])) err('No (required) sum param');
 if (!isset($_POST['uid'])) err('No (required) uid param');
